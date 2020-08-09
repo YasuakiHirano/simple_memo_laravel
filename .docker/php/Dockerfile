@@ -21,3 +21,7 @@ RUN PHP_OPENSSL=yes docker-php-ext-configure imap --with-kerberos --with-imap-ss
 
 # composer install
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+ 
+# npm install
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt-get install -y nodejs
