@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// 初期表示はログインにする
+Route::get('/', 'Auth\LoginController@showLoginForm');
+Route::get('/user', 'Auth\RegisterController@showRegistrationForm');
+Route::get('/memo', function() {
+    return view("memo");
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
