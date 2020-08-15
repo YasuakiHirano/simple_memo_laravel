@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 // 初期表示はログインにする
-Route::get('/', 'Auth\LoginController@showLoginForm');
-Route::get('/user', 'Auth\RegisterController@showRegistrationForm');
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('login.index');
+Route::get('/user', 'Auth\RegisterController@showRegistrationForm')->name('user.register');
 Route::get('/memo', function() {
     return view("memo");
-});
+})->name('memo.index');
 
 Auth::routes();
 
