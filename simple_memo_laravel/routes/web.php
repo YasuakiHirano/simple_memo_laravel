@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 // 初期表示はログインにする
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('login.index');
-Route::get('/user', 'Auth\RegisterController@showRegistrationForm')->name('user.register');
+Route::get('/user', 'Auth\RegisterController@showRegistrationForm')->name('user.index');
+Route::post('/user/register', 'Auth\RegisterController@register')->name('user.exec.register');
+
 Route::get('/memo', function() {
     return view("memo");
 })->name('memo.index');

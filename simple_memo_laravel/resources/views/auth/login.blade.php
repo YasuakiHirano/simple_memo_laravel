@@ -35,7 +35,7 @@
                         アカウントをお持ちではありませんか？
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="{{ route("user.register") }}" class="text-success">アカウントを作成</a>
+                        <a href="{{ route("user.index") }}" class="text-success">アカウントを作成</a>
                     </div>
                 </div>
             </div>
