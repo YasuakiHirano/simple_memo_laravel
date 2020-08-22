@@ -25,8 +25,16 @@ class UserCreateRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255|regex:/^[a-zA-Z0-9]+$/',
-            'email' => 'required|max:255',
+            'email' => 'required|max:255|email',
             'password' => 'required|regex:/^[a-zA-Z0-9]+$/',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.regex' => ':attributeは半角英数字で入力してください。',
+            'password.regex' => ':attributeは半角英数字で入力してください。',
         ];
     }
 }

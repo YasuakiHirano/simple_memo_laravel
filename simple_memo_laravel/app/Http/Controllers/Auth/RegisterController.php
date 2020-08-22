@@ -7,6 +7,7 @@ use App\Http\Requests\UserCreateRequest;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -45,8 +46,8 @@ class RegisterController extends Controller
 
     /**
      * ユーザー登録後、投稿画面に遷移する
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param UserCreateRequest $request
+     * @return RedirectResponse
      */
     public function register(UserCreateRequest $request)
     {
