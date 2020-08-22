@@ -87,7 +87,7 @@ return [
     'min' => [
         'numeric' => 'The :attribute must be at least :min.',
         'file' => 'The :attribute must be at least :min kilobytes.',
-        'string' => 'The :attribute must be at least :min characters.',
+        'string' => ':attributeは:min文字以上で入力してください。',
         'array' => 'The :attribute must have at least :min items.',
     ],
     'not_in' => 'The selected :attribute is invalid.',
@@ -117,6 +117,7 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
+    'duplicate' => '既に登録されている:attributeです。',
 
     /*
     |--------------------------------------------------------------------------
@@ -147,7 +148,7 @@ return [
     */
 
     'attributes' => [
-        'name' => '名前',
+        'name' => 'ユーザー名',
         'email' => 'メールアドレス',
         'password' => 'パスワード'
     ],
