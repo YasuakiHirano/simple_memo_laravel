@@ -27,7 +27,7 @@
                                 <span class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-envelope"></i></span>
                                 </span>
-                            <input type="text" name="email" class="form-control" placeholder="メールアドレス" autocomplete="off" />
+                            <input type="text" name="email" class="form-control" placeholder="メールアドレス" value="{{ old('email') }}" autocomplete="off" />
                         </label>
                         <label class="input-group w-100">
                                 <span class="input-group-prepend">
