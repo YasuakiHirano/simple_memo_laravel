@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\UserDuplicate;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserCreateRequest extends FormRequest
@@ -26,7 +25,7 @@ class UserCreateRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255|regex:/^[a-zA-Z0-9]+$/',
-            'email' => ['required','max:255','email', new UserDuplicate()],
+            'email' => 'required|max:255|email|unique:users',
             'password' => 'required|min:8|regex:/^[a-zA-Z0-9]+$/',
         ];
     }
