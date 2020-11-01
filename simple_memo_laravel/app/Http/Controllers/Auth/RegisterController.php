@@ -54,6 +54,10 @@ class RegisterController extends Controller
             'name' => 'required|max:255|regex:/^[a-zA-Z0-9]+$/',
             'email' => 'required|max:255|email|unique:users',
             'password' => 'required|max:255|min:8|regex:/^[a-zA-Z0-9]+$/',
+        ],
+        [
+            'name.regex' => ':attributeは半角英数字で入力してください。',
+            'password.regex' => ':attributeは半角英数字で入力してください。',
         ]);
 
         User::create([
