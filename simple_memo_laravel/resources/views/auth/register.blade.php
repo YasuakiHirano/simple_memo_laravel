@@ -6,6 +6,15 @@
             @csrf
             <div class="card rounded login-card-width shadow">
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul class="mb-0 mt-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="rounded-circle mx-auto border-gray border d-flex mt-3 icon-circle">
                         <img src="{{ asset('images/animal_stand_zou.png')  }}" class="w-75 mx-auto p-2" alt="icon"/>
                     </div>
