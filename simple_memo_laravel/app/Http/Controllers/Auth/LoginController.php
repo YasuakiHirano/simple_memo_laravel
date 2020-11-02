@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -26,7 +27,24 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/memo';
+
+    /**
+     * ログイン時のバリデーション
+     * @param Request $request
+     */
+    protected function validateLogin(Request $request)
+    {
+        $request->validate(
+            [
+                $this->username() => 'required|max:255|email',
+                'password' => 'required|min:8|max:255|regex:/^[a-zA-Z0-9]+$/',
+            ],
+            [
+                'password.regex' => ':attributeは半角英数字で入力してください。'
+            ]
+        );
+    }
 
     /**
      * Create a new controller instance.
