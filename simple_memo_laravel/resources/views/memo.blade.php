@@ -46,7 +46,7 @@
                         <input type="hidden" name="edit_id" value="{{ $select_memo->id }}" />
                         <div id="memo-menu">
                             <button type="submit" class="btn btn-danger" formaction=""><i class="fas fa-trash-alt"></i></button>
-                            <button type="submit" class="btn btn-success" formaction=""><i class="fas fa-save"></i></button>
+                            <button type="submit" class="btn btn-success" formaction="{{ route('memo.update') }}"><i class="fas fa-save"></i></button>
                         </div>
                         <input type="text" id="memo-title" name="edit_title" placeholder="タイトルを入力する..." value="{{ $select_memo->title }}" />
                         <textarea id="memo-content" name="edit_content" placeholder="内容を入力する...">{{ $select_memo->content }}</textarea>
