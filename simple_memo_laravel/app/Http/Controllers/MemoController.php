@@ -18,7 +18,8 @@ class MemoController extends Controller
 
         return view('memo', [
             'name' => $this->getLoginUserName(),
-            'memos' => $memos
+            'memos' => $memos,
+            'select_memo' => session()->get('select_memo')
         ]);
     }
 
@@ -33,6 +34,19 @@ class MemoController extends Controller
             'title' => '新規メモ',
             'content' => '',
         ]);
+
+        return redirect()->route('memo.index');
+    }
+
+    /**
+     * メモの選択
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function select(Request $request)
+    {
+        $memo = Memo::find($request->id);
+        session()->put('select_memo', $memo);
 
         return redirect()->route('memo.index');
     }
