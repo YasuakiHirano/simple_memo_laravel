@@ -45,7 +45,7 @@
                         @csrf
                         <input type="hidden" name="edit_id" value="{{ $select_memo->id }}" />
                         <div id="memo-menu">
-                            <button type="submit" class="btn btn-danger" formaction=""><i class="fas fa-trash-alt"></i></button>
+                            <button type="submit" class="btn btn-danger" formaction="{{ route('memo.delete') }}"><i class="fas fa-trash-alt"></i></button>
                             <button type="submit" class="btn btn-success" formaction="{{ route('memo.update') }}"><i class="fas fa-save"></i></button>
                         </div>
                         <input type="text" id="memo-title" name="edit_title" placeholder="タイトルを入力する..." value="{{ $select_memo->title }}" />
