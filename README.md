@@ -1,6 +1,8 @@
+![SimpleMemoLaravel](https://raw.githubusercontent.com/wiki/YasuakiHirano/simple_memo/images/simple-memo.gif)
 ## simple memo laravel
-laravelで作成したEvernote風メモアプリです。
-nginx1.19.1 + php7.4-fpm + mysql5.7を使用しています。
+laravelで作成したEvernote風メモアプリです。  
+こちらの[リポジトリ(simple_memo)](https://github.com/YasuakiHirano/simple_memo)のLaravelバージョンです。    
+nginx1.19.1 + php7.4-fpm + mysql5.7を使用しています。  
 
 ## 起動する
 docker-composeを使って、下記のコマンドで起動できます。
@@ -36,7 +38,7 @@ php artisan key:generate
 
 ## データベースの設定
 ### データベース作成
-http://localhost:8086でphpmyadminが開くので、そこからデータベースを作成します。
+http://localhost:8086 でphpmyadminが開くので、そこからデータベースを作成します。
 
 ```
 CREATE DATABASE simple_memo_laravel DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
@@ -50,4 +52,8 @@ docker-compose -f .docker_memo_laravel/docker-compose.yml exec php /bin/bash
 cd simple_memo_laravel/
 php artisan migrate
 ```
+## 教材
+こちらで作り方や内容について解説しています。
+
+[PHPとLaravelでEvernote風のメモアプリを作ってみよう！](https://github.com/YasuakiHirano/simple_memo.git)
 
