@@ -55,5 +55,5 @@ php artisan migrate
 ## 教材
 こちらで作り方や内容について解説しています。
 
-[PHPとLaravelでEvernote風のメモアプリを作ってみよう！](https://github.com/YasuakiHirano/simple_memo.git)
+[PHPとLaravelでEvernote風のメモアプリを作ってみよう！](https://www.techpit.jp/courses/132)
 
